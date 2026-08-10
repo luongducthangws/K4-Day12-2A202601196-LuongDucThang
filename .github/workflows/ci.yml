@@ -43,6 +43,6 @@ jobs:
         API_TOKEN: "test-token-ci"
         REDIS_URL: "redis://localhost:6379/0"
       run: |
-        # Chạy toàn bộ test, nhưng bỏ qua file test_cp5 vì file đó 
-        # dùng để test kết nối thật lên mạng (Render)
-        pytest tests/ -v --ignore=tests/test_cp5.py
+        # Chạy toàn bộ test, nhưng bỏ qua file test_cp5 và test_bonus_cicd
+        # vì nó đòi hỏi cấu hình Cloud & Badge phức tạp hơn
+        pytest tests/ -v --ignore=tests/test_cp5.py --ignore=tests/test_bonus_cicd.py
