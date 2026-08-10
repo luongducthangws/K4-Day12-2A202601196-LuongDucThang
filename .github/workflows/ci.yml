@@ -45,4 +45,4 @@ jobs:
       run: |
         # Chạy toàn bộ test, nhưng bỏ qua file test_cp5 vì file đó 
         # dùng để test kết nối thật lên mạng (Render)
-        pytest tests/ -v -k "not test_cp5"
+        pytest tests/ -v --ignore=tests/test_cp5.py
